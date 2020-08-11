@@ -1,4 +1,4 @@
-package main.java.IK09;
+package main.java.IP;
 
 public class Interval {
 
