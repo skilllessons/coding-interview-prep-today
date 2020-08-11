@@ -1,4 +1,4 @@
-package main.java.google;
+package main.java.sorting;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package main.java.google;
+package main.java.sorting;
 
 public class BubbleSort {
 

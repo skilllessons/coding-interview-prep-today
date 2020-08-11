@@ -1,4 +1,4 @@
-package main.java.google;
+package main.java.sorting;
 
 public class SelectionSort {
 
@@ -6,27 +6,16 @@ public class SelectionSort {
 
 
         for (int i = 0; i < input.length - 1; i++) {
-
-
             int min = i;
 
-
             for (int j = i + 1; j < input.length; j++) {
-
                 if (input[j] < input[min]) {
-
                     min = j;
-
                 }
-
                 int temp = input[min];
-
                 input[min] = input[i];
-
                 input[i] = temp;
             }
-
-
         }
        return input;
 
