@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+ * please note that the requirements is to implement this algorithm in place
+ * with out using any extra memory
  *
  */
 
