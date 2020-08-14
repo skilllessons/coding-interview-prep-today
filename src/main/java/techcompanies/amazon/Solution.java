@@ -1,7 +1,6 @@
-package main.java.amazon;
+package main.java.techcompanies.amazon;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Solution {
     // METHOD SIGNATURE BEGINS, THIS METHOD IS REQUIRED

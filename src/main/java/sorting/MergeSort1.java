@@ -25,7 +25,7 @@ public class MergeSort1 {
                    i++;
                } else {
                    temp[index] = a[j];
-                   i++;
+                   j++;
                }
 
                index++;

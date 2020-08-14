@@ -1,4 +1,4 @@
-package main.java.amazon;
+package main.java.techcompanies.amazon;
 
 import java.util.*;
 

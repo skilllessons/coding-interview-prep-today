@@ -1,4 +1,4 @@
-package main.java.dp;
+package main.java.techcompanies.dp;
 
 public class Fibo {
     static int fib(int n)

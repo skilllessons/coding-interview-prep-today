@@ -1,4 +1,4 @@
-package main.java.dp;
+package main.java.techcompanies.dp;
 
 class Solution {
     public int climbStairs(int n) {

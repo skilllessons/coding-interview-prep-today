@@ -12,11 +12,11 @@ public class BinarySearch {
             return mid;
         } else if (key < a[mid]) {
 
-            return binarySearchRec(a, key, low, mid-1);
+            return binarySearchRec(a, key, low, mid - 1);
 
         } else {
 
-            return binarySearchRec(a, key, mid+1, a.length - 1);
+            return binarySearchRec(a, key, mid + 1, a.length - 1);
 
         }
 
@@ -32,7 +32,7 @@ public class BinarySearch {
 
         int[] input = {1, 2, 4, 7, 8, 12, 15, 19, 24, 50, 69, 80, 100};
 
-       System.out.println(binSearch(input, 44 ));
+        System.out.println(binSearch(input, 44));
     }
 
 
