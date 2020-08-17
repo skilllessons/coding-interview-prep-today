@@ -3,8 +3,14 @@ package main.java.sorting;
 public class MergeSort {
 
     public static void mergeSort(int[] array) {
+        int[] temp = new int[array.length];
+        mergesort(array, temp, 0, array.length - 1);
 
-        mergesort(array, new int[array.length], 0, array.length - 1);
+        for (int i = 0; i < temp.length; i++) {
+            System.out.println(temp[i]);
+        }
+
+
     }
 
     private static void mergesort(int[] array, int[] temp, int leftStart, int rightEnd) {
@@ -46,6 +52,25 @@ public class MergeSort {
 
         }
 
+      /*  while (left <= leftEnd) {
+            temp[index] = array[left];
+            index++;
+            left++;
+        }
+        while (right <= rightEnd) {
+            temp[index] = array[right];
+            index++;
+            right++;
+        }*/
 
+        System.arraycopy(array, left, temp, index, leftEnd - left + 1);
+        System.arraycopy(array, right, temp, index, rightEnd - right + 1);
+        System.arraycopy(temp, leftStart, array, leftStart, size);
+
+    }
+
+    public static void main(String[] args) {
+        int[] array = {3, 2, 4, 16, 7, 8, 2, 3, 5, 6,56,3,45,1,2,78};
+        mergeSort(array);
     }
 }
