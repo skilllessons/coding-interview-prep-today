@@ -1,6 +1,5 @@
 # coding-interview-prep-today
 
-***INSERT GRAPHIC HERE (include hyperlink in image)***
 
 # Interview prep for tech companies.
 
