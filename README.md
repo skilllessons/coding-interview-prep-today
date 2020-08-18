@@ -19,8 +19,9 @@
 - leetcodePrepset
 - sorting
 - techcompanies
+    --> Amazon
     --> Apple
     --> Google
-    ---> FB et
+    ---> FB etc.
 - license
 
