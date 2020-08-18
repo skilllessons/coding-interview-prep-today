@@ -2,23 +2,25 @@
 
 ***INSERT GRAPHIC HERE (include hyperlink in image)***
 
-# Repository Title Goes Here
+# Interview prep for tech companies.
 
-> Subtitle or Short Description Goes Here
+> This repo contain some imporant leetcode coding problems.
 
-> ideally one sentence
+> Idea is to solve prolems efficiently and simple way.
 
-> include terms/tags that can be searched
+> include junit test cases
 
-**Badges will go here**
+**Project Structure**
 
-- build status
-- issues (waffle.io maybe)
-- devDependencies
-- npm package
-- coverage
-- slack
-- downloads
-- gitter chat
+- any chapter/topic wise examples 
+- IP(Interview practice Pattern)
+- lamda(Mainly java8/11 lamda feature)
+- leetcodemostliked
+- leetcodePrepset
+- sorting
+- techcompanies
+    --> Apple
+    --> Google
+    ---> FB et
 - license
-- etc.
+
