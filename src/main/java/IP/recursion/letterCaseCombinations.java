@@ -77,18 +77,18 @@ public class letterCaseCombinations {
         if (Character.isDigit(input.charAt(index))) {
             slate.append(input.charAt(index-1));
             letterCasePermutationHelper(input, slate.toString(), index + 1, result);
-            slate.deleteCharAt(input.charAt(index-1));
+            slate.deleteCharAt(slate.length()-1);
 
 
         } else {
 
             slate.append(input.charAt(index));
             letterCasePermutationHelper(input, slate.toString(), index + 1, result);
-            slate.deleteCharAt(input.charAt(index-1));
+            slate.deleteCharAt(slate.length()-1);
 
             slate.append(input.charAt(index));
             letterCasePermutationHelper(input, slate.toString(), index + 1, result);
-            slate.deleteCharAt(input.charAt(index-1));
+            slate.deleteCharAt(slate.length()-1);
 
         }
     }
