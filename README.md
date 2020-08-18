@@ -3,11 +3,11 @@
 
 # Interview prep for tech companies.
 
-> This repo contain some imporant leetcode coding problems.
+1.This repo contain some imporant leetcode coding problems.
 
-> Idea is to solve prolems efficiently and simple way.
+2.Idea is to solve prolems efficiently and simple way.
 
-> include junit test cases
+3.include junit test cases
 
 **Project Structure**
 
