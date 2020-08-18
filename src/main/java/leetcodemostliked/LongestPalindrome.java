@@ -1,7 +1,6 @@
-package main.java.mostliked;
+package main.java.leetcodemostliked;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 

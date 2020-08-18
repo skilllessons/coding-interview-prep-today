@@ -1,4 +1,4 @@
-package main.java.mostliked;
+package main.java.leetcodemostliked;
 
 import java.util.Arrays;
 import java.util.Collections;

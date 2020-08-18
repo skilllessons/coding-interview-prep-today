@@ -1,4 +1,4 @@
-package main.java.mostliked.tree;
+package main.java.leetcodemostliked.tree;
 
 public class InvertTree {
     public TreeNode invertTree(TreeNode root) {

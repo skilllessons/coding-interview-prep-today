@@ -1,4 +1,4 @@
-package main.java.mostliked.tree;
+package main.java.leetcodemostliked.tree;
 
 /**
  * Definition for a binary tree node.

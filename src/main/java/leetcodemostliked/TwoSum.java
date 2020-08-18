@@ -1,4 +1,4 @@
-package main.java.mostliked;
+package main.java.leetcodemostliked;
 
 public class TwoSum {
 
