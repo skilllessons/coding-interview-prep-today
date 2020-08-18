@@ -3,7 +3,7 @@
 
 # Interview prep for tech companies.
 
-1.This repo contain some imporant leetcode coding problems.
+1.This repo contain some imporant https://leetcode.com/ coding problems.
 
 2.Idea is to solve prolems efficiently and simple way.
 
