@@ -1,4 +1,4 @@
-package main.java.leetcode.array.medium;
+package main.java.leetcodeprepset.array.medium;
 
 
 /**

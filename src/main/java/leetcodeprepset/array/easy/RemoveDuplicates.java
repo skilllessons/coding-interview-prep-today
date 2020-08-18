@@ -1,4 +1,4 @@
-package main.java.leetcode.array.easy;
+package main.java.leetcodeprepset.array.easy;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
