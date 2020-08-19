@@ -3,38 +3,54 @@ package main.java.IP.recursion;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
+//TODO: This is not working need to check
+
 public class StringPermutation {
 
 
     public static List<String> permute(String input) {
         List<String> results = new ArrayList<>();
-        permuteHelper(input.toCharArray(), "", 0, results);
+        permuteHelper(input.toCharArray(), new ArrayList<>(), 0, results);
 
         return results;
     }
 
 
-    public static void permuteHelper(char[] input, String slate, int index, List<String> results) {
+    public static void permuteHelper(char[] input, List<String> slate, int index, List<String> results) {
 
         if (index == input.length) {
-            results.add(slate);
+            results.add(copyString(slate));
             return;
         }
 
         for (int i = index; i < input.length; i++) {
-            swap(input, i, index);
-            permuteHelper(input, slate + input[i], index + 1, results);
-            swap(input, i, index);
+            swap(i,index,input);
+            slate.add(String.valueOf(input[i]));
+            permuteHelper(input, slate, index + 1, results);
+            slate.remove(slate.size() -1);
+            swap(index,i,input);
 
         }
 
 
     }
 
-    private static void swap(char[] input, int i, int index) {
+    private static String copyString(List<String> slate) {
+        StringBuilder sb = new StringBuilder();
+        slate.stream().forEach(i ->{
+            sb.append(i);
+
+        });
+        return sb.toString();
+
+    }
+
+    private static void swap( int i, int j, char[] input) {
         char temp = input[i];
-        input[i] = input[index];
-        input[index] = temp;
+        input[i] = input[j];
+        input[j] = temp;
 
     }
 

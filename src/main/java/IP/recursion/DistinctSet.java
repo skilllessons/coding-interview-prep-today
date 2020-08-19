@@ -15,7 +15,7 @@ public class DistinctSet {
 
     public static void helper(int[] nums, int index,List<Integer> slate, List<List<Integer>> result){
 
-        if(index == nums.length){
+        if(index == nums.length-1){
             result.add(new ArrayList<>(slate));
             return;
         }
