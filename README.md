@@ -24,3 +24,7 @@
     ---> FB etc.
 - license
 
+
+
+Telegram link if you want to discuss any problem.
+https://t.me/joinchat/AAAAAETuq88PX2zd3KCMvQ
