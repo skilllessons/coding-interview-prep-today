@@ -38,7 +38,9 @@ public class PermuteUnique {
     public static void helper(int[] nums, List<Integer> slate, int index, List<List<Integer>> result) {
 
         if (index == nums.length) {
-            result.add(new ArrayList<>(slate));
+            if(result.contains(slate) == false){
+                result.add(new ArrayList<>(slate));
+            }
             return;
         }
 
