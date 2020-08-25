@@ -17,7 +17,7 @@ package main.java.leetcodeprepset.array.easy;
  */
 public class TwoSum {
 
-    public int[] twoSum(int[] nums, int target) {
+    public static int[] twoSum(int[] nums, int target) {
         int[] value=new int[2];
         for(int i=0;i<=nums.length-1;i++){
             int val = target - nums[i];
@@ -35,8 +35,17 @@ public class TwoSum {
     }
 
     public static void main(String[] args) {
+        int[] nums = new int[4];
+        nums[0] = 2;
+        nums[1] = 7;
+        nums[2] = 11;
+        nums[3] = 15;
+        int[] result = twoSum(nums,9);
 
+        for (int i=0;i<result.length;i++){
+            System.out.println(result[i]);
 
+        }
 
     }
 }
