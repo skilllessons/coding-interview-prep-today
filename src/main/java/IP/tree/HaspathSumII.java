@@ -63,11 +63,19 @@ public class HaspathSumII {
 
 
     }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(5);
+        root.left = new TreeNode(4);
+        root.right = new TreeNode(8);
+    }
+
+
     /**
      * Definition for a binary tree node.
      */
 
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;

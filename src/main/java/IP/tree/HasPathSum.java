@@ -20,6 +20,7 @@ package main.java.IP.tree;
  * return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
  */
 public class HasPathSum {
+
     boolean hasPathSum = false;
 
     public boolean hasPathSum(TreeNode root, int sum) {
@@ -69,6 +70,10 @@ public class HasPathSum {
             this.left = left;
             this.right = right;
         }
+    }
+
+    public static void main(String[] args) {
+
     }
 
 }
