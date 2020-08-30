@@ -1,4 +1,4 @@
-package main.java.sorting;
+package main.java.IP.sorting;
 
 import org.junit.Test;
 
