@@ -19,14 +19,14 @@
     <b>EASY</b>.</br>  
       - <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">26. Remove Duplicates from Sorted Array</a>.</br> 
       - <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/">122. Best Time to Buy and Sell Stock II</a></br>    
-      - <a href="https://leetcode.com/problems/rotate-array/">189. Rotate Array</a></br>  
-      - <a href="https://leetcode.com/problems/contains-duplicate/">217.Contains Duplicate</a></br>  
+      - <a href="https://leetcode.com/problems/rotate-array/">189. Rotate Array</a>.</br>  
+      - <a href="https://leetcode.com/problems/contains-duplicate/">217.Contains Duplicate</a>. </br>  
       - <a href="https://leetcode.com/problems/single-number/">136. Single Number</a></br>  
       - <a href="https://leetcode.com/problems/intersection-of-two-arrays-ii/">350. Intersection of Two Arrays II</a>.</br>  
       - <a href="https://leetcode.com/problems/plus-one/">66. Plus One</a>.</br>  
       - <a href="https://leetcode.com/problems/move-zeroes/">283. Move Zeroes</a>.</br>  
       - <a href="https://leetcode.com/problems/two-sum/">1. Two Sum</a>.</br>  
-      - <a https://leetcode.com/problems/rotate-image/">48. Rotate Image</a>.</br>  
+      - <a href="https://leetcode.com/problems/rotate-image/">48. Rotate Image</a>.</br>  
      
     <b>Medium</b>. 
     
