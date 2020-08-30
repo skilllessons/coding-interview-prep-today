@@ -1,4 +1,4 @@
-package main.java.IP;
+package main.java.IP.arraySorting;
 
 public class KLergest {
 

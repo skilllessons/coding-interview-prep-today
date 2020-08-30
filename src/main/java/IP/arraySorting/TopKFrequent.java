@@ -1,4 +1,4 @@
-package main.java.IP;
+package main.java.IP.arraySorting;
 
 import java.util.HashMap;
 import java.util.PriorityQueue;
