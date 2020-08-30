@@ -16,8 +16,7 @@
 - leetcodemostliked(Upcoming)
 - leetcodePrepset(Upcoming)
     
-    <b>EASY</b>. 
-    
+    <b>EASY</b>
       - <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">26. Remove Duplicates from Sorted Array</a>.   
       - <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/">122. Best Time to Buy and Sell Stock II</a>.  
       - <a href="https://leetcode.com/problems/rotate-array/">189. Rotate Array</a>. 
