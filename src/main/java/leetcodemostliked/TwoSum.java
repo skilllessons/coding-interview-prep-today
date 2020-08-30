@@ -1,27 +1,44 @@
 package main.java.leetcodemostliked;
 
+
+import org.junit.Test;
+
+import java.util.Arrays;
+
+import static org.junit.Assert.assertEquals;
+
+
 public class TwoSum {
 
-    public int[] twoSum(int[] nums, int target) {
-        int[] value=new int[2];
-        for(int i=0;i<=nums.length-1;i++){
-            int val = target - nums[i];
-            for(int j=i+1; j<=nums.length-1;j++){
-                if(nums[j] == val) {
-                    value[0]=i;
-                    value[1]=j;
-                    return value;
-                }
+    public static int[] sumOfTwo(int[] input, int sum) {
 
+        Arrays.sort(input);
+        int low = 0;
+        int high = input.length - 1;
+        int[] result = new int[2];
+
+        while (low < high) {
+            if (input[low] + input[high] == sum) {
+                result[0] = input[low];
+                result[1] = input[high];
+                return result;
+            } else if (input[low] + input[high] > 0) {
+                high--;
+
+            } else if (input[low] + input[high] > 0) {
+                low++;
 
             }
+
         }
-        return value;
+        return result;
     }
 
-    public static void main(String[] args) {
 
-
-
+    @Test
+    public void testSumOfTwo(){
+        int[] input = {2, 7, 11, 15};
+        int[] result = {2, 7};
+        assertEquals(result,sumOfTwo(input, 9));
     }
 }

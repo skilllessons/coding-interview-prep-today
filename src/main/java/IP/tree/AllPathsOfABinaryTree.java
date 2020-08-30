@@ -14,7 +14,7 @@ public class AllPathsOfABinaryTree {
 
     public static void  dfs(TreeNode node, List<Integer> slate, List<List<Integer>> result){
 
-        //We have reached to Leafe
+        //We have reached to Leaf
         if(node.left_ptr == null || node.right_ptr == null){
             result.add(new ArrayList<>(slate));
             return;
