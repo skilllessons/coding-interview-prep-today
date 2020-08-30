@@ -3,6 +3,10 @@ package main.java.IP.tree;
 
 import java.util.*;
 
+/**
+ * Find a height of tree BFS implementation
+ */
+
 public class Findheight {
     static int level = 0;
 
