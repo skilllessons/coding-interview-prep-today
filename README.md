@@ -11,13 +11,11 @@
 
 **Project Structure**
 
-- any chapter/topic wise examples 
 - IP(Interview practice Pattern)
-- lamda(Mainly java8/11 lamda feature)
-- leetcodemostliked
-- leetcodePrepset
-- sorting
-- techcompanies
+- lamda(Mainly java8/11 lamda feature)(Upcoming)
+- leetcodemostliked(Upcoming)
+- leetcodePrepset(Upcoming)
+- techcompanies (Upcoming)
     --> Amazon
     --> Apple
     --> Google
