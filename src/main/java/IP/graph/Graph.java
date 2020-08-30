@@ -1,4 +1,4 @@
-package main.java.graph;
+package main.java.IP.graph;
 
 import java.util.*;
 
