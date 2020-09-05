@@ -1,0 +1,46 @@
+package main.java.IP.graph;
+
+import java.util.List;
+
+public class CanVisitAllRooms {
+
+    public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+
+        boolean[] visited = new boolean[rooms.size()];
+
+        DFS(rooms, 0,visited);
+        // BFS(rooms,visited);
+
+        for(int i=0; i<visited.length; i++){
+            if(visited[i] == false) return false;
+        }
+        return true;
+    }
+
+    private void DFS(List<List<Integer>> rooms, int sv, boolean[] visited){
+        visited[sv] = true;
+        for(int  i : rooms.get(sv)){
+            if(visited[i] == false)
+                DFS(rooms,i,visited);
+        }
+    }
+
+   /* private void BFS(List<List<Integer>> rooms,boolean[] visited){
+
+        Queue<Integer> queue =  new LinkedList<>();
+        visited[0] = true;
+        for(int i : rooms.get(0)){
+            queue.add(i);
+            visited[i] = true;
+        }
+        while(!queue.isEmpty()){
+            int v = queue.poll();
+            for(int i : rooms.get(v)){
+                if(visited[i] == false){
+                    queue.add(i);
+                    visited[i] = true;
+                }
+            }
+        }
+    }*/
+}
