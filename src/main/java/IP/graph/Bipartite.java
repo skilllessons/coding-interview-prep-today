@@ -144,11 +144,14 @@ public class Bipartite {
 
     private boolean dfs(int source, int[][] graph) {
         visited[source] = 1;
+
         if (parent[source] == -1) {
             color[source] = 0;
         } else {
             color[source] = 1 - color[parent[source]];
         }
+
+
 
         for (Integer neighbor : graph[source]) {
             if (visited[neighbor] == -1) {
@@ -156,6 +159,7 @@ public class Bipartite {
                 if (!dfs(neighbor, graph)) return false;
 
             } else {
+
                 if (color[source] == color[neighbor]) return false;
             }
 
