@@ -2,71 +2,96 @@ package main.java.IP.graph;
 
 import java.util.*;
 
+
+/**
+ * https://leetcode.com/problems/is-graph-bipartite/
+ *
+ * 785. Is Graph Bipartite?
+ * Medium
+ *
+ * 1720
+ *
+ * 184
+ *
+ * Add to List
+ *
+ * Share
+ * Given an undirected graph, return true if and only if it is bipartite.
+ *
+ * Recall that a graph is bipartite if we can split it's set of nodes into two independent subsets A and B such that every edge in the graph has one node in A and another node in B.
+ *
+ * The graph is given in the following form: graph[i] is a list of indexes j for which the edge between nodes i and j exists.  Each node is an integer between 0 and graph.length - 1.  There are no self edges or parallel edges: graph[i] does not contain i, and it doesn't contain any element twice.
+ *
+ * Example 1:
+ * Input: [[1,3], [0,2], [1,3], [0,2]]
+ * Output: true
+ * Explanation:
+ * The graph looks like this:
+ * 0----1
+ * |    |
+ * |    |
+ * 3----2
+ * We can divide the vertices into two groups: {0, 2} and {1, 3}.
+ * Example 2:
+ * Input: [[1,2,3], [0,2], [0,1,3], [0,2]]
+ * Output: false
+ * Explanation:
+ * The graph looks like this:
+ * 0----1
+ * | \  |
+ * |  \ |
+ * 3----2
+ * We cannot find a way to divide the set of nodes into two independent subsets.
+ *
+ *
+ * Note:
+ *
+ * graph will have length in range [1, 100].
+ * graph[i] will contain integers in range [0, graph.length - 1].
+ * graph[i] will not contain i or duplicate values.
+ * The graph is undirected: if any element j is in graph[i], then i will be in graph[j].
+ */
+
 public class BipartiteDfs {
 
-    //private static int components = 0;
-    private static List<List<Integer>> adjList = new LinkedList<>();
 
-    private static Set<Integer> visited = new HashSet<>();
-    private static int[] parent = null;
-    private static int[] color = null;
+    public static boolean isBipartite(int[][] graph) {
 
-    public boolean isBipartite(int[][] graph) {
+        Map<Integer,Integer> visited = new HashMap<>();
 
-        int n = graph.length;
-        parent = new int[n];
-        Arrays.fill(parent, -1);
-        color = new int[n];
-        Arrays.fill(color, -1);
+        for(int i=0; i<graph.length;i++) {
 
-        buildAdjList(n, graph, adjList);
-        for (int i = 0; i < n; i++) {
-            if (!dfs(i)) {
+            if(!visited.containsKey(i)) {
+                if(!dfs(i,graph, visited, 0)) return false;
+            }
+
+        }
+
+        return true;
+
+    }
+
+    static boolean dfs(int node, int[][] graph, Map<Integer,Integer> visited, int color)  {
+
+        visited.put(node,color);
+
+        for(Integer neighbor:graph[node]) {
+
+            if(visited.containsKey(neighbor) && visited.get(neighbor) == color){
                 return false;
             }
+
+            if(visited.containsKey(neighbor)) continue;
+
+            if(!dfs(neighbor, graph, visited, 1-color)){
+                return false;
+            }
+
+
         }
+
         return true;
-    }
-
-    private boolean dfs(int source) {
-      visited.add(source);
-      if(parent[source] == -1){
-          color[source] = 0;
-      } else {
-          color[source] = 1 - color[parent[source]];
-      }
-
-      for (Integer neighbor: adjList.get(source)){
-          if(visited.contains(neighbor)){
-              parent[neighbor] = source;
-              if(!dfs(neighbor)) return false;
-
-          } else {
-              if(color[source] == color[neighbor]) return false;
-          }
-
-      }
-
-       return true;
-    }
-
-
-    /**
-     * build the adjacency list
-     *
-     * @param n
-     * @param edges
-     * @param adjList
-     */
-    private static void buildAdjList(int n, int[][] edges, List<List<Integer>> adjList) {
-        for (int i = 0; i < n; i++) {
-            adjList.add(i, new ArrayList<>());
-        }
-        for (int[] edge : edges) {
-            adjList.get(edge[0]).add(edge[1]);
-            adjList.get(edge[1]).add(edge[0]);
-        }
-
 
     }
+
 }

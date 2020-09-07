@@ -85,7 +85,7 @@ public class PossibleBipartition {
 
 
     private static void buildAdjList(int n, int[][] edges, List<List<Integer>> adjList) {
-        for (int i = 0; i <= n + 1; i++) {
+        for (int i = 0; i < n ; i++) {
             adjList.add(i, new ArrayList<>());
         }
         for (int[] edge : edges) {
