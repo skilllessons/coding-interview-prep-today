@@ -1,6 +1,10 @@
 package main.java.IP.graph;
 
+import org.junit.Test;
+
 import java.util.*;
+
+import static org.junit.Assert.assertEquals;
 
 
 /**
@@ -91,6 +95,29 @@ public class BipartiteDfs {
         }
 
         return true;
+
+    }
+
+    @Test
+    public void testBipartite() {
+
+        int[][] input = new int[4][2];
+        input[0][0] = 1;
+        input[0][1] = 3;
+
+        input[1][0] = 0;
+        input[1][1] = 2;
+
+
+        input[2][0] = 1;
+        input[2][1] = 3;
+
+
+        input[3][0] = 0;
+        input[3][1] = 2;
+
+        assertEquals(true, isBipartite(input));
+
 
     }
 
