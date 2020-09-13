@@ -43,9 +43,56 @@ public class UniquePathsII {
 
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
 
-        //TODO:....
+        if(obstacleGrid == null || obstacleGrid.length ==0) return -1;
 
-        return -1;
+        int m = obstacleGrid.length;
+        int n = obstacleGrid[0].length;
+
+
+
+
+
+        //Base
+        if(obstacleGrid[0][0] == 1) {
+            obstacleGrid[0][0] = 0;
+        } else {
+            obstacleGrid[0][0] = 1;
+        }
+
+        //fill 1st row
+        for(int row=1;row<m;row++) {
+            if(obstacleGrid[row][0] == 1){
+                obstacleGrid[row][0] = 0;
+            } else {
+                obstacleGrid[row][0] = obstacleGrid[row-1][0];
+            }
+        }
+
+        //fill 1st column
+        for(int col=1;col<n; col++) {
+            if(obstacleGrid[0][col] == 1){
+                obstacleGrid[0][col] = 0;
+            } else {
+                obstacleGrid[0][col] = obstacleGrid[0][col-1];
+            }
+        }
+
+
+        for(int row=1;row<m;row++) {
+            for(int col=1;col<n;col++) {
+                if(obstacleGrid[row][col] == 1){
+                    obstacleGrid[row][col] = 0;
+                } else {
+                    obstacleGrid[row][col] = obstacleGrid[row][col-1] + obstacleGrid[row-1][col];
+                }
+
+            }
+        }
+
+
+
+
+        return obstacleGrid[m-1][n-1];
 
     }
 
