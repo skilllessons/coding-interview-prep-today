@@ -52,7 +52,7 @@ class test {
         for (DocumentCommand c : dc) {
             c.execute();
         }
-        System.out.println(d.text);
+        System.out.println("After Execution:>>>>"+d.text);
 
     }
 }
