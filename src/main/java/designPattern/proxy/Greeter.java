@@ -1,4 +1,4 @@
-package main.java.proxy;
+package main.java.designPattern.proxy;
 
 abstract class Greeter {
     abstract String greet();
