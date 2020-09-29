@@ -11,7 +11,7 @@ public class Merger_first_into_second {
         int k = arr2.length - 1;
 
 
-        while (i>= 0 && j>=0) {
+        while (i >= 0 && j >= 0) {
 
             if (arr1[i] >= arr2[j]) {
                 arr2[k] = arr1[i];
@@ -27,18 +27,16 @@ public class Merger_first_into_second {
         }
 
 
-
-
     }
 
     public static void main(String[] args) {
-        int[] a1 = {10,10};
-        int[] a2 = {10,10,0,0};
+        int[] a1 = {2, 3};
+        int[] a2 = {5, 10, 0, 0};
 
         merger_first_into_second(a1, a2);
 
-
+        for (int i = 0; i <a2.length; i++) {
+            System.out.println(a2[i]);
+        }
     }
-
-
 }
