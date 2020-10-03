@@ -1,4 +1,4 @@
-package main.java.IP.arraySorting;
+package main.java.companies.facebook;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
