@@ -1,6 +1,10 @@
 package main.java.IP.arraySorting;
 
+import org.junit.Test;
+
 import java.util.*;
+import static org.junit.Assert.assertEquals;
+
 
 public class TopKFrequentWord {
 
@@ -41,19 +45,15 @@ public class TopKFrequentWord {
     //["i", "love", "leetcode", "i", "love", "coding"]
     //2
 
-    public static void main(String[] args) {
-
+    @Test
+    public void testTopK() {
         TopKFrequentWord  topKFrequentWord = new TopKFrequentWord();
-
         String[] input = {"i", "love", "leetcode", "i", "love", "coding"};
-
         List<String> output = topKFrequentWord.topKFrequent(input, 2);
-
-
-        output.stream().forEach(i -> System.out.println(i));
-
-
-
+        List<String> expected = new ArrayList<>();
+        expected.add("i");
+        expected.add("love");
+        assertEquals(expected,output);
     }
 
 
