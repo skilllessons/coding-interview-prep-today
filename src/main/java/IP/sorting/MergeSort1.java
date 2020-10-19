@@ -56,5 +56,6 @@ public class MergeSort1 {
     public static void main(String[] args) {
         int[] array = {3, 2, 4, 16, 7, 8, 2, 3, 5, 67};
         mergeSort(array);
+        System.out.println(array);
     }
 }
