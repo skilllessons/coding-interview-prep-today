@@ -1,4 +1,4 @@
-package main.java.IP.tree;
+package main.java.IP.sorting;
 
 import java.util.PriorityQueue;
 

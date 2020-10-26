@@ -44,6 +44,8 @@ public class MergeSort3 {
 
 
     }
+
+
     private static void mergeHalves(List<Integer> arr, List<Integer> result, int leftStart, int rightEnd) {
 
         int leftEnd = (rightEnd + leftStart) / 2;

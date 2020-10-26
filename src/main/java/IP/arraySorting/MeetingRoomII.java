@@ -35,14 +35,14 @@ public class MeetingRoomII {
 
     @Test
     public void testCanAttendMeeting() {
-        int[][] intervals = new int[1][1];
+        int[][] intervals = new int[3][3];
 
         int[] i1 = new int[2];
         i1[0] = 2;
         i1[1] = 7;
 
 
-      /*  int[] i2 = new int[2];
+        int[] i2 = new int[2];
         i2[0] = 5;
         i2[1] = 10;
 
@@ -52,10 +52,10 @@ public class MeetingRoomII {
 
         intervals[0] = i1;
         intervals[1] = i2;
-        intervals[2] = i3;*/
+        intervals[2] = i3;
 
         //[[0,30],[5,10],[15,20]]
-        intervals[0] = i1;
+        //intervals[0] = i1;
 
         assertEquals(2, minMeetingRooms(intervals));
 
