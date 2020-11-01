@@ -1,5 +1,40 @@
 package main.java.IP.arraySorting;
 
+
+/**
+https://leetcode.com/problems/meeting-rooms/
+ 252. Meeting Rooms
+ Easy
+
+ 713
+
+ 41
+
+ Add to List
+
+ Share
+ Given an array of meeting time intervals where intervals[i] = [starti, endi], determine if a person could attend all meetings.
+
+
+
+ Example 1:
+
+ Input: intervals = [[0,30],[5,10],[15,20]]
+ Output: false
+ Example 2:
+
+ Input: intervals = [[7,10],[2,4]]
+ Output: true
+
+
+ Constraints:
+
+ 0 <= intervals.length <= 104
+ intervals.length == 2
+ 0 <= starti < endi <= 106
+
+ */
+
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -64,6 +99,16 @@ public class MeetingRoom {
         i3.start = 15;
         i3.end = 20;
         intervals[2] = i3;
+
+        assertEquals(false, canAttendMeetings(intervals));
+
+    }
+
+
+    @Test
+    public void testCanAttendMeeting1() {
+
+        int[][] intervals= new int[3][3];
 
         assertEquals(false, canAttendMeetings(intervals));
 
