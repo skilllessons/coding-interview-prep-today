@@ -57,6 +57,7 @@ import java.util.Set;
  */
 
 public class FindCircleNum {
+
     public int findCircleNum(int[][] m) {
         int count = 0;
         HashSet<Integer> visited = new HashSet<Integer>();
