@@ -1,4 +1,4 @@
-package main.java.slidingwindow;
+package main.java.IP.slidingwindow;
 
 public class FindMinSubArray {
 

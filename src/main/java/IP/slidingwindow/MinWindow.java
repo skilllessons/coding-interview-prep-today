@@ -1,11 +1,8 @@
-package main.java.slidingwindow;
+package main.java.IP.slidingwindow;
 
-import javafx.util.Pair;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class MinWindow {

@@ -1,4 +1,4 @@
-package main.java.slidingwindow;
+package main.java.IP.slidingwindow;
 
 import java.util.HashMap;
 import java.util.Map;
