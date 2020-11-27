@@ -12,42 +12,42 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * https://leetcode.com/problems/course-schedule/
- *
+ * <p>
  * 207. Course Schedule
  * Medium
- *
+ * <p>
  * 4329
- *
+ * <p>
  * 187
- *
+ * <p>
  * Add to List
- *
+ * <p>
  * Share
  * There are a total of numCourses courses you have to take, labeled from 0 to numCourses-1.
- *
+ * <p>
  * Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed as a pair: [0,1]
- *
+ * <p>
  * Given the total number of courses and a list of prerequisite pairs, is it possible for you to finish all courses?
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * Example 1:
- *
+ * <p>
  * Input: numCourses = 2, prerequisites = [[1,0]]
  * Output: true
  * Explanation: There are a total of 2 courses to take.
- *              To take course 1 you should have finished course 0. So it is possible.
+ * To take course 1 you should have finished course 0. So it is possible.
  * Example 2:
- *
+ * <p>
  * Input: numCourses = 2, prerequisites = [[1,0],[0,1]]
  * Output: false
  * Explanation: There are a total of 2 courses to take.
- *              To take course 1 you should have finished course 0, and to take course 0 you should
- *              also have finished course 1. So it is impossible.
- *
- *
+ * To take course 1 you should have finished course 0, and to take course 0 you should
+ * also have finished course 1. So it is impossible.
+ * <p>
+ * <p>
  * Constraints:
- *
+ * <p>
  * The input prerequisites is a graph represented by a list of edges, not adjacency matrices. Read more about how a graph is represented.
  * You may assume that there are no duplicate edges in the input prerequisites.
  * 1 <= numCourses <= 10^5
@@ -77,11 +77,10 @@ public class CourseScheduleII {
         List<Integer> topSort = new ArrayList<>();
 
 
+        for (int i = 0; i < n; i++) {
 
-        for (int i =0;i<n;i++){
-
-            if(visited[i] == -1){
-                if(dfs(i, visited, arrival, departure, timestamp, topSort)){
+            if (visited[i] == -1) {
+                if (dfs(i, visited, arrival, departure, timestamp, topSort)) {
                     int[] result = new int[0];
                     return result;
                 }
@@ -99,41 +98,38 @@ public class CourseScheduleII {
                                int[] departure, int[] timestamp, List<Integer> topSort
     ) {
         arrival[source] = timestamp[0];
-        timestamp[0] +=1;
+        timestamp[0] += 1;
         visited[source] = 1;
 
 
-
-        for (Integer neighbor: adjList.get(source)){
-            if(visited[neighbor] == -1){
-                if(dfs(neighbor, visited, arrival, departure, timestamp, topSort)) {
+        for (Integer neighbor : adjList.get(source)) {
+            if (visited[neighbor] == -1) {
+                if (dfs(neighbor, visited, arrival, departure, timestamp, topSort)) {
 
                     return true;
                 }
-            }else {
-                if (departure[neighbor] == -1){
+            } else {
+                if (departure[neighbor] == -1) {
                     return true;
                 }
             }
         }
 
         departure[source] = timestamp[0];
-        timestamp[0] +=1;
+        timestamp[0] += 1;
         topSort.add(source);
         return false;
     }
 
 
-
-
     private static void buildAdjList(int n, int[][] prerequisites) {
 
-        for (int i =0; i<n;i++){
+        for (int i = 0; i < n; i++) {
             adjList.add(i, new ArrayList<>());
         }
 
 
-        for(int[] adj: prerequisites){
+        for (int[] adj : prerequisites) {
             adjList.get(adj[1]).add(adj[0]);
 
         }
@@ -159,7 +155,7 @@ public class CourseScheduleII {
         prerequisites[3][0] = 3;
         prerequisites[3][1] = 2;
 
-        int[] result = {0,2,1,3};
+        int[] result = {0, 2, 1, 3};
         int[] actual = findOrder(4, prerequisites);
 
         assertEquals(actual.length, result.length);
