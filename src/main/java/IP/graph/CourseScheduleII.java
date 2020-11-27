@@ -1,11 +1,14 @@
 package main.java.IP.graph;
 
+import org.junit.Test;
 
-//TODO:==========
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * https://leetcode.com/problems/course-schedule/
@@ -52,36 +55,33 @@ import java.util.List;
 
 public class CourseScheduleII {
 
-    private static int[] visited = null;
-    private static int[] arrival = null;
-    private static int[] timestamp = null;
-    private static int[] departure = null;
     private static List<List<Integer>> adjList = new ArrayList<>();
-    private static List<Integer> topSort = new ArrayList<>();
 
     static int[] findOrder(int n, int[][] prerequisites) {
 
-        visited = new int[n];
+        int[] visited = new int[n];
         Arrays.fill(visited, -1);
 
-        arrival = new int[n];
+        int[] arrival = new int[n];
         Arrays.fill(arrival, -1);
 
-        departure = new int[n];
+        int[] departure = new int[n];
         Arrays.fill(departure, -1);
 
-        //topSort = new  int[n];
 
-
-        timestamp = new int[1];
+        int[] timestamp = new int[1];
         timestamp[0] = 0;
 
         buildAdjList(n, prerequisites);
 
+        List<Integer> topSort = new ArrayList<>();
+
+
+
         for (int i =0;i<n;i++){
 
             if(visited[i] == -1){
-                if(dfs(i)){
+                if(dfs(i, visited, arrival, departure, timestamp, topSort)){
                     int[] result = new int[0];
                     return result;
                 }
@@ -95,15 +95,19 @@ public class CourseScheduleII {
 
     }
 
-    private static boolean dfs(int source) {
+    private static boolean dfs(int source, int[] visited, int[] arrival,
+                               int[] departure, int[] timestamp, List<Integer> topSort
+    ) {
         arrival[source] = timestamp[0];
         timestamp[0] +=1;
-
         visited[source] = 1;
+
+
 
         for (Integer neighbor: adjList.get(source)){
             if(visited[neighbor] == -1){
-                if(dfs(neighbor)) {
+                if(dfs(neighbor, visited, arrival, departure, timestamp, topSort)) {
+
                     return true;
                 }
             }else {
@@ -115,12 +119,8 @@ public class CourseScheduleII {
 
         departure[source] = timestamp[0];
         timestamp[0] +=1;
-        topSort.add(source) ;
+        topSort.add(source);
         return false;
-
-
-
-
     }
 
 
@@ -137,6 +137,33 @@ public class CourseScheduleII {
             adjList.get(adj[1]).add(adj[0]);
 
         }
+
+    }
+
+
+    @Test
+    public void tesTopOrder() {
+
+        int[][] prerequisites = new int[4][2];
+        prerequisites[0][0] = 1;
+        prerequisites[0][1] = 0;
+
+
+        prerequisites[1][0] = 2;
+        prerequisites[1][1] = 0;
+
+        prerequisites[2][0] = 3;
+        prerequisites[2][1] = 1;
+
+
+        prerequisites[3][0] = 3;
+        prerequisites[3][1] = 2;
+
+        int[] result = {0,2,1,3};
+        int[] actual = findOrder(4, prerequisites);
+
+        assertEquals(actual.length, result.length);
+
 
     }
 
