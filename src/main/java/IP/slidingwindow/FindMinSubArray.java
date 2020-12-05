@@ -1,5 +1,8 @@
 package main.java.IP.slidingwindow;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 public class FindMinSubArray {
 
 
@@ -26,8 +29,6 @@ public class FindMinSubArray {
 
 
     public static void main(String[] args) {
-
-
 
         int result = FindMinSubArray.findMinSubArray(7, new int[] { 2, 1, 5, 2, 3, 2 });
         System.out.println("Smallest subarray length: " + result);

@@ -66,4 +66,21 @@ public class ReorderLogFiles {
         });
         return logs;
     }
+
+    public static void main(String[] args) {
+      String[]  logs = {"dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"};
+        System.out.println("Before sorting");
+        System.out.println(printLog(logs));
+        System.out.println("After sorting");
+        System.out.println(printLog(reorderLogFiles(logs)));
+    }
+
+    private static String printLog(String[] reorderLogFiles) {
+        StringBuilder sb = new StringBuilder();
+        for (String str: reorderLogFiles){
+            sb.append(str);
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
 }
