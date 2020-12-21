@@ -10,24 +10,30 @@ public class FindMaxSumSubArray {
      * @return
      */
     public static int findMaxSumSubArray(int k, int[] arr) {
-       int maxSum = 0, windowsum =0;
-        for (int i=0; i<arr.length -k; i++){
+       int maxSum = 0,
+           windowsum;
+
+        for (int i=0; i<arr.length -k; i++) {
                windowsum = 0;
              for (int j=i; j<k+i; j++){
                  windowsum += arr[j];
              }
             maxSum = Math.max(maxSum, windowsum);
        }
+
+
         return maxSum;
     }
 
     public static int findMaxSumSubArraySlidingWindow(int k, int[] arr) {
+
         int maxSum = 0 ;
         int windowsum =0;
         int windowstart=0;
-        for (int i=0; i<arr.length; i++){
-            windowsum += arr[i];
 
+        for (int i=0; i<arr.length; i++){
+
+            windowsum += arr[i];
             if(i >= k-1){
                 maxSum = Math.max(maxSum, windowsum);
                 windowsum -= arr[windowstart];
@@ -35,6 +41,7 @@ public class FindMaxSumSubArray {
             }
 
         }
+
         return maxSum;
     }
 
