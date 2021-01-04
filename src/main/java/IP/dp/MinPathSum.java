@@ -41,8 +41,6 @@ public class MinPathSum {
         int m = grid.length;
         int n = grid[0].length;
 
-        //int[][] table = new int[m][n];
-
 
         if(m == 0){
             return 0;
