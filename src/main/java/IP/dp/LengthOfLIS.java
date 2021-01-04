@@ -1,6 +1,5 @@
 package main.java.IP.dp;
 
-import java.util.Arrays;
 
 public class LengthOfLIS {
 
