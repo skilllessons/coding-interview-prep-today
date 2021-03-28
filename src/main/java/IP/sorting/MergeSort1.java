@@ -50,6 +50,11 @@ public class MergeSort1 {
             j++;
         }
 
+        for (int x=start; x<=end; x++) {
+
+            a[x] = temp[x];
+        }
+
 
     }
 

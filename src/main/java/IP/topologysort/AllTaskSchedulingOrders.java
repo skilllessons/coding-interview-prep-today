@@ -18,7 +18,8 @@ class AllTaskSchedulingOrders {
 
         // b. Build the graph
         for (int i = 0; i < prerequisites.length; i++) {
-            int parent = prerequisites[i][0], child = prerequisites[i][1];
+            int parent = prerequisites[i][0],
+                    child = prerequisites[i][1];
             graph.get(parent).add(child); // put the child into it's parent's list
             inDegree.put(child, inDegree.get(child) + 1); // increment child's inDegree
         }

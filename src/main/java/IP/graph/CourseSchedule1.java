@@ -59,7 +59,6 @@ public class CourseSchedule1 {
     private static List<Integer> topSort = new ArrayList<>();
 
     static List<Integer> course_schedule(int n, List<List<Integer>> prerequisites) {
-
         visited = new int[n];
         Arrays.fill(visited, -1);
 
@@ -72,11 +71,9 @@ public class CourseSchedule1 {
 
         timestamp = new int[1];
         timestamp[0] = 0;
-
         buildAdjList(n, prerequisites);
 
-        for (int i =0;i<n;i++){
-            
+        for (int i =0;i<n;i++) {
             if(visited[i] == -1){
                 if(dfs(i)){
                     return new ArrayList<>();
@@ -94,7 +91,6 @@ public class CourseSchedule1 {
     private static boolean dfs(int source) {
         arrival[source] = timestamp[0];
         timestamp[0] +=1;
-
         visited[source] = 1;
 
         for (Integer neighbor: adjList.get(source)){
@@ -102,7 +98,7 @@ public class CourseSchedule1 {
                 if(dfs(neighbor)) {
                     return true;
                 }
-            }else {
+            } else {
                 if (departure[neighbor] == -1){
                     return true;
                 }
@@ -113,28 +109,18 @@ public class CourseSchedule1 {
         timestamp[0] +=1;
         topSort.add(source);
         return false;
-
-
-
-
     }
 
 
 
 
     private static void buildAdjList(int n, List<List<Integer>> prerequisites) {
-
         for (int i =0; i<n;i++){
             adjList.add(i, new ArrayList<>());
         }
-
-
         for(List<Integer> adj: prerequisites){
             adjList.get(adj.get(1)).add(adj.get(0));
 
         }
-
     }
-
-
 }

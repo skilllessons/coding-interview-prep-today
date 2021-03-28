@@ -31,6 +31,8 @@ public class EmployeeFreeTime {
 
         return ans;
     }
+
+
     class Interval {
         public int start;
         public int end;
@@ -51,6 +53,8 @@ public class EmployeeFreeTime {
             index = i;
         }
     }
+
+
 }
 
 

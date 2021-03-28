@@ -51,18 +51,6 @@ public class MergeSort {
             index++;
 
         }
-
-      /*  while (left <= leftEnd) {
-            temp[index] = array[left];
-            index++;
-            left++;
-        }
-        while (right <= rightEnd) {
-            temp[index] = array[right];
-            index++;
-            right++;
-        }*/
-
         System.arraycopy(array, left, temp, index, leftEnd - left + 1);
         System.arraycopy(array, right, temp, index, rightEnd - right + 1);
         System.arraycopy(temp, leftStart, array, leftStart, size);
