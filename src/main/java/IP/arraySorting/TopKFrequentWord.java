@@ -55,7 +55,7 @@ public class TopKFrequentWord {
         List<String> result = new ArrayList<>();
 
         while(k !=0){
-            result.add(heap.poll());
+            result.add(heap.poll()); // K top words
             k--;
         }
 

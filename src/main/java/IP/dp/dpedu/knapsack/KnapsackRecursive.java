@@ -15,19 +15,7 @@ public class KnapsackRecursive {
     }
 
     private int knapsackRecursive(int[] profits, int[] weights, int capacity, int currentIndex) {
-        //Base case
-        if(capacity<=0 || currentIndex>=profits.length) {
-            return 0;
-        }
-        int profit1 = 0;
-        if(weights[currentIndex] <= capacity) {
-              //include
-            profit1= profits[currentIndex]  +knapsackRecursive(profits, weights, capacity - weights[currentIndex], currentIndex + 1);
-          }
-        //include
-        int profit2 = knapsackRecursive(profits, weights, capacity, currentIndex+1);
-        return Math.max(profit1,profit2);
-
+       return -1;
     }
 
     public static void main(String[] args) {

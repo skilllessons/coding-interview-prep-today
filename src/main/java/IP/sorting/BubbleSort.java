@@ -8,15 +8,17 @@ public class BubbleSort {
 
         while (!isSorted) {
             isSorted = true;
-            for (int i = 0; i < array.length - 1; i++) {
-                if (array[i] > array[i + 1]) {
-                    swap(array, i, i + 1);
+            for (int i=0; i<array.length-1; i++) {
+                if (array[i] > array[i+1]){
+                    swap(array, i, i+1);
                     isSorted = false;
                 }
             }
+
+
         }
 
-        return array;
+     return array;
     }
 
     private static void swap(int[] a, int i, int j) {
@@ -27,7 +29,7 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        int[] input = {10, 2, 3, 4, 1, 5, 6, 29};
+        int[] input = {10, 13, 45, 2, 3, 4, 1, 5, 6, 29};
         System.out.println(printArray(bubbleSort(input)));
     }
 

@@ -30,6 +30,8 @@ public class AllSubset {
         }
 
         helper(input, slate, index + 1, result);
+
+
         slate.append(input[index]);
         helper(input, slate, index + 1, result);
         slate.deleteCharAt(slate.length() - 1);

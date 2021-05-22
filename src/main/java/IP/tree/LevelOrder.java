@@ -47,9 +47,9 @@ public class LevelOrder {
             while (q.size() != 0) {
                 int size = q.size();
                 List<Integer> res = new ArrayList<>();
-                for (int i = 0; i < size; i++) {
+                for (int i = 0; i < size; i++) {  //2
                     TreeNode node = q.poll();
-                    res.add(node.val);
+                    res.add(node.val); //9, 20
                     if (node.left != null) {
                         q.add(node.left);
                     }
@@ -58,7 +58,7 @@ public class LevelOrder {
                     }
 
                 }
-                result.add(res);
+                result.add(res); // [3][9,20] Q => 9,20  //9 ,
 
             }
 

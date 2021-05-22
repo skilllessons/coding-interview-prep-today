@@ -12,55 +12,46 @@ import javax.script.ScriptException;
 
 public class GenerateAllExpressions {
     static String[] generate_all_expressions(String s, long target) {
+        if(s.length() == 0 || s==null)
+        {
+            return new String[]{};
+        }
         List<String> result = new ArrayList<>();
-        helper(s.toCharArray(), 0, target, new StringBuilder(), result);
-
-        String[] finalResult = new String[result.size()];
-        int counter=0;
-        for(String st : result){
-            finalResult[counter] = st;
-            counter++;
+        char[] path = new char[s.length() * 2];
+        char[] digits = s.toCharArray();
+        long n = 0;
+        for(int i=0;i<s.length();i++)
+        {
+            n = n*10 + (digits[i] - '0');
+            path[i] = digits[i];
+            generate_all_expressions_helper(result, path, digits, i+1, i+1, 0, n, target);
         }
 
-        return finalResult;
+        return result.toArray(new String[0]);
     }
-
-    static void helper(char[] input, int index, long target, StringBuilder sb, List<String> result) {
-
-        if (index == input.length-1) {
-            sb.deleteCharAt(sb.length()-1);
-            if (checkTarget(sb.toString(), target) && !result.contains(sb.toString())) {
-                result.add(sb.toString());
+    static void generate_all_expressions_helper(List<String> result, char[] path, char[] digits, int index, int pos, long prev, long curr, long target)
+    {
+        //Base case:
+        if(pos == digits.length)
+        {
+            if(prev+curr == target)
+            {
+                result.add(new String(path, 0, index));
             }
-            return;
         }
+        //Recursive case:
+        long n = 0;
+        int j = index + 1;
+        for(int i=pos; i<digits.length;i++)
+        {
+            n = n*10 + (digits[i] - '0');
+            path[j++] = digits[i];
 
-        for (int i=index;i<input.length-1;i++){
-            sb.append(input[i]+ "*");
-            helper(input,index+1, target, sb, result);
-            sb.deleteCharAt(sb.length()-1);
-
-            sb.append(input[i]+ "+");
-            helper(input,index+1, target, sb, result);
-            sb.deleteCharAt(sb.length()-1);
-
+            path[index] = '+';
+            generate_all_expressions_helper(result, path, digits, j, i+1, prev+curr, n, target);
+            path[index] = '*';
+            generate_all_expressions_helper(result, path, digits, j, i+1, prev, curr*n, target);
         }
-
-
-    }
-
-    private static boolean checkTarget(String input, long target) {
-        try {
-            ScriptEngineManager mgr = new ScriptEngineManager();
-            ScriptEngine engine = mgr.getEngineByName("JavaScript");
-            if (Long.parseLong(String.valueOf(engine.eval(input))) == target) {
-                return true;
-            }
-
-        } catch (ScriptException e) {
-            e.printStackTrace();
-        }
-        return false;
     }
 
     public static void main(String[] args) {
