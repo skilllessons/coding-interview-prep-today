@@ -45,5 +45,5 @@
 
 
 
-Telegram link if you want to want to follow.
-https://t.me/joinchat/AAAAAETuq88PX2zd3KCMvQ
+Pls join the discord channel we discuss system desgin and DSA here
+https://discord.gg/qZKASXYK
