@@ -39,8 +39,8 @@ public class LetterCombinations {
     private static Map<String, String> mapping = new HashMap<>();
 
     static {
-        mapping.put("0", "");
-        mapping.put("1", "");
+        mapping.put("0", "0");
+        mapping.put("1", "1");
         mapping.put("2", "abc");
         mapping.put("3", "def");
         mapping.put("4", "ghi");
@@ -62,11 +62,19 @@ public class LetterCombinations {
 
     public static void letterCombinationsHelper(String digits, String slate, int index, Map<String, String> mapping, List<String> results) {
 
+        System.out.println("======================");
+        System.out.println("digits:"  +digits);
+        System.out.println("slate:"   +slate);
+        System.out.println("index:"   +index);
+        System.out.println("mapping:" +mapping);
+        System.out.println("results:" +results);
+        System.out.println("======================");
+
+
         if (index == digits.length()) {
             if(!slate.isEmpty())
             results.add(slate);
             return;
-
         }
 
         String letters = mapping.get(String.valueOf(digits.charAt(index)));

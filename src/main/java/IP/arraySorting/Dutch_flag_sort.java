@@ -1,5 +1,7 @@
 package main.java.IP.arraySorting;
 
+import java.util.ArrayList;
+
 public class Dutch_flag_sort {
 
     public static void dutch_flag_sort(char[] balls) {
@@ -29,8 +31,45 @@ public class Dutch_flag_sort {
 
     }
 
+    public static ArrayList<Integer> sortColors(ArrayList<Integer> A) {
+
+        // start, end, index
+
+        int start =0;
+        int index=0;
+        int end = A.size()-1;
+
+        while (index <= end && start < end) {
+
+            if(A.get(index) == 0) {
+                A.add(index, A.get(start));
+                A.add(start, 0);
+                start++;
+                index++;
+            } else if(A.get(index) == 2) {
+                A.add(index, A.get(end));
+                A.add(end, 2);
+                end --;
+            } else {
+                index++;
+            }
+
+        }
+        return A;
+    }
+
     public static void main(String[] args) {
-        char[] c = {'G', 'B', 'G', 'G', 'R', 'B', 'R', 'G'};
-        dutch_flag_sort(c);
+        ArrayList<Integer> input = new ArrayList<>();
+        input.add(1);
+        input.add(1);
+        input.add(0);
+        input.add(0);
+        input.add(2);
+        input.add(2);
+        input.add(1);
+        ArrayList<Integer> output = sortColors(input);
+        System.out.println(output);
+        //char[] c = {'G', 'B', 'G', 'G', 'R', 'B', 'R', 'G'};
+        //dutch_flag_sort(c);
     }
 }
