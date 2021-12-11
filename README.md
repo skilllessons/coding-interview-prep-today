@@ -44,7 +44,7 @@
 
 
 *If you are preparing for interview pls follow this*
-- <a href="https://github.com/skilllessons/coding-interview-prep-today/tree/master/src/main/java/IP"> **Must do Problemset*</a>
+- <a href="https://github.com/skilllessons/coding-interview-prep-today/tree/master/src/main/java/IP"> **Must do Problem set*</a>
 
 
 Pls join the discord channel we discuss system desgin and DSA here
