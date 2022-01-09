@@ -1,0 +1,103 @@
+package main.java.IP.arraySorting;
+
+import java.util.Stack;
+
+import static org.junit.Assert.assertEquals;
+
+/**
+ * https://leetcode.com/problems/evaluate-reverse-polish-notation/submissions/
+ *
+ * 150. Evaluate Reverse Polish Notation
+ * Medium
+ *
+ * 2439
+ *
+ * 583
+ *
+ * Add to List
+ *
+ * Share
+ * Evaluate the value of an arithmetic expression in Reverse Polish Notation.
+ *
+ * Valid operators are +, -, *, and /. Each operand may be an integer or another expression.
+ *
+ * Note that division between two integers should truncate toward zero.
+ *
+ * It is guaranteed that the given RPN expression is always valid. That means the expression would always evaluate to a result, and there will not be any division by zero operation.
+ *
+ *
+ *
+ * Example 1:
+ *
+ * Input: tokens = ["2","1","+","3","*"]
+ * Output: 9
+ * Explanation: ((2 + 1) * 3) = 9
+ * Example 2:
+ *
+ * Input: tokens = ["4","13","5","/","+"]
+ * Output: 6
+ * Explanation: (4 + (13 / 5)) = 6
+ * Example 3:
+ *
+ * Input: tokens = ["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
+ * Output: 22
+ * Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
+ * = ((10 * (6 / (12 * -11))) + 17) + 5
+ * = ((10 * (6 / -132)) + 17) + 5
+ * = ((10 * 0) + 17) + 5
+ * = (0 + 17) + 5
+ * = 17 + 5
+ * = 22
+ *
+ */
+
+public class EvalRPNHelper {
+    Stack<Integer> stack = new Stack<Integer>();
+
+    public int evalRPN(String[] tokens) {
+        return evalRPNHelper(tokens);
+    }
+
+    public int evalRPNHelper(String[] tokens) {
+
+        for(String s: tokens) {
+
+            if(s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/")) {
+                int val2 = Integer.valueOf(stack.pop());
+                int val1 = Integer.valueOf(stack.pop());
+
+                int result = 0;
+                if(s.equals("+")) {
+                    result = (val1 + val2);
+                } else if(s.equals("-")) {
+                    result = (val1 - val2);
+
+                } else if(s.equals("*")) {
+                    result = (val1 * val2);
+                } else if(s.equals("/")) {
+                    result = (val1 / val2);
+
+                }
+
+                stack.push(Integer.valueOf(result));
+            } else {
+                stack.push(Integer.valueOf(s));
+
+            }
+
+        }
+
+
+        return stack.pop();
+
+    }
+
+    public static void main(String[] args) {
+        EvalRPNHelper eval = new EvalRPNHelper();
+        String[] input = new String[]{"4","13","5","/","+"};
+        //System.out.println(eval.evalRPN(input));
+        assertEquals(6, eval.evalRPN(input));
+
+    }
+
+}
