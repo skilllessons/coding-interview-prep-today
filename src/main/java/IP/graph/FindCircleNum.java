@@ -1,6 +1,8 @@
 package main.java.IP.graph;
 
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Set;
 
 /**
@@ -64,12 +66,33 @@ public class FindCircleNum {
         for(int i = 0; i<m.length ;i++) {
 
             if(!visited.contains(i)) {
-                dfs(i, m, visited);
+                bfs(i, m, visited);
                 count++;
             }
         }
 
         return count;
+    }
+
+    private void bfs(int source, int[][] m, HashSet<Integer> visited) {
+
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(source);
+
+        while(!queue.isEmpty()) {
+            int node = queue.poll();
+            if(!visited.contains(node)) {
+                int[] adjList = m[node];
+                for (int i: adjList) {
+                    queue.add(i);
+                    visited.add(i);
+                }
+
+            }
+
+
+        }
+
     }
 
     public void dfs(int source, int[][] m, Set<Integer> visited){
